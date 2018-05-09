@@ -3,7 +3,7 @@
 import numpy as np
 import tensorflow as tf 
 
-# 1 创建图的方法
+# 1 crteate the graph
 c = tf.constant(0.0)
 
 g = tf.Graph()
@@ -20,13 +20,13 @@ tf.reset_default_graph()
 g3 =  tf.get_default_graph()
 print(g3)
 
-# 2.	获取tensor
+# 2.	get tensor
 
 print(c1.name)
 t = g.get_tensor_by_name(name = "Const:0")
 print(t)
 
-# 3 获取op
+# 3 get op
 a = tf.constant([[1.0, 2.0]])
 b = tf.constant([[1.0], [3.0]])
 
@@ -46,12 +46,22 @@ with tf.Session() as sess:
     test = tf.get_default_graph().get_tensor_by_name("exampleop:0")
     print (test) 
 
-#4 获取所有列表
+#4  Get all lists
 
-#返回图中的操作节点列表
+#Return to the list of operation nodes in the figure
 tt2 = g.get_operations()
 print(tt2)
 #5
 tt3 = g.as_graph_element(c1)
 print(tt3)
 print("________________________\n")
+
+
+#练习
+#with g.as_default():
+#  c1 = tf.constant(0.0)
+#  print(c1.graph)
+#  print(g)
+#  print(c.graph)
+#  g3 = tf.get_default_graph()
+#  print(g3)
