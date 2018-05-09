@@ -2,7 +2,7 @@
   
 import tensorflow as tf  
   
-filename_queue = tf.train.string_input_producer(["D:/Project/HCNA-AI-ENG/tf_read.csv"])  
+filename_queue = tf.train.string_input_producer(["tf_read.csv"])  
 reader = tf.TextLineReader()  
 key, value = reader.read(filename_queue)  
   
